@@ -1,62 +1,33 @@
 {
+    "env" : {
+        "zephyrIncludePath": [
+            "${workspaceFolder}/../zephyr/kernel/include",
+            "${workspaceFolder}/../zephyr/arch/arm/include",
+            "${workspaceFolder}/../zephyr/soc/${ARCH}/${SOC_PATH}",
+            "${workspaceFolder}/../zephyr/soc/${ARCH}/${SOC_PATH}/include",
+            "${workspaceFolder}/../zephyr/soc/${ARCH}/${SOC_PATH}/${SOC_FAMILY}",
+            "${workspaceFolder}/../zephyr/ext/hal/nordic",
+            "${workspaceFolder}/../zephyr/ext/hal/nordic/drivers",
+            "${workspaceFolder}/../zephyr/ext/hal/nordic/nrfx",
+            "${workspaceFolder}/${BOARD_DIR}",
+            "${workspaceFolder}/../zephyr/include",
+            "${workspaceFolder}/../zephyr/include/drivers",
+            "${workspaceFolder}/build/zephyr/include/generated"
+        ],
+        "ARCH": "arm",
+        "SOC_PATH": "nordic_nrf",
+        "SOC_FAMILY": "nrf52",
+        "BOARD_DIR": "../zephyr/boards/arm/nrf52_adafruit_feather"
+    },
     "configurations": [
         {
-            "name": "Mac",
-            "includePath": [
-                "/usr/include",
-                "/usr/local/include",
-                "${workspaceRoot}",
-                "${workspaceRoot}../zephyr/include"
-            ],
-            "defines": [],
-            "intelliSenseMode": "clang-x64",
-            "browse": {
-                "path": [
-                    "/usr/include",
-                    "/usr/local/include",
-                    "${workspaceRoot}",
-                    "${workspaceRoot}../zephyr/include"
-                ],
-                "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
-            },
-            "macFrameworkPath": [
-                "/System/Library/Frameworks",
-                "/Library/Frameworks"
-            ]
-        },
-        {
             "name": "Linux",
-            "includePath": [
-                "/usr/include/c++/7",
-                "/usr/include/x86_64-linux-gnu/c++/7",
-                "/usr/include/c++/7/backward",
-                "/usr/lib/gcc/x86_64-linux-gnu/7/include",
-                "/usr/local/include",
-                "/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed",
-                "/usr/include/x86_64-linux-gnu",
-                "/usr/include",
-                "${workspaceRoot}",
-                "${workspaceRoot}../zephyr/include"
-            ],
+            "includePath": [ "${zephyrIncludePath}", "/opt/gcc-arm-none-eabi/arm-none-eabi/include" ],
             "defines": [],
-            "intelliSenseMode": "clang-x64",
-            "browse": {
-                "path": [
-                    "/usr/include/c++/7",
-                    "/usr/include/x86_64-linux-gnu/c++/7",
-                    "/usr/include/c++/7/backward",
-                    "/usr/lib/gcc/x86_64-linux-gnu/7/include",
-                    "/usr/local/include",
-                    "/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed",
-                    "/usr/include/x86_64-linux-gnu",
-                    "/usr/include",
-                    "${workspaceRoot}",
-                    "${workspaceRoot}../zephyr/include"
-                ],
-                "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
-            }
+            "compilerPath": "/opt/gcc-arm-none-eabi/bin/arm-none-eabi-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
         },
         {
             "name": "Win32",
@@ -65,21 +36,9 @@
                 "${workspaceRoot}",
                 "${workspaceRoot}../zephyr/include"
             ],
-            "defines": [
-                "_DEBUG",
-                "UNICODE"
-            ],
-            "intelliSenseMode": "msvc-x64",
-            "browse": {
-                "path": [
-                    "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include/*",
-                    "${workspaceRoot}",
-                    "${workspaceRoot}../zephyr/include"
-                ],
-                "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
-            }
+            "defines": [],
+            "intelliSenseMode": "msvc-x64"
         }
     ],
-    "version": 3
+    "version": 4
 }

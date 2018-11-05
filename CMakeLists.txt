@@ -1,9 +1,11 @@
-set(BOARD nrf52_pca10040)
-set(QEMU_EXTRA_FLAGS -s)
+cmake_minimum_required(VERSION 3.8.2)
+
+set(BOARD nrf52_adafruit_feather)
 
 include($ENV{ZEPHYR_BASE}/cmake/app/boilerplate.cmake NO_POLICY_SCOPE)
-project(NONE)
+project(nrf52_mesh)
 
-target_link_libraries(app subsys__bluetooth)
+# target_link_libraries(app PUBLIC subsys__bluetooth)
 
-target_sources(app PRIVATE src/main.c)
+FILE(GLOB app_sources src/*.c)
+target_sources(app PRIVATE ${app_sources})

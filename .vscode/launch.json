@@ -1,0 +1,27 @@
+{
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    // cortex-debug: https://marcelball.ca/projects/cortex-debug/cortex-debug-launch-configurations/
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "jlink",
+            "name": "Debug (JLink)",
+            "executable": "./build/zephyr/zephyr.elf",
+            "cwd": "${workspaceRoot}",
+            "device": "NRF52832_XXAA",
+            "showDevDebugOutput":false,
+            "runToMain": true,
+            "interface": "swd",
+            "svdFile": "${workspaceFolder}/../zephyr/ext/hal/nordic/nrfx/mdk/nrf52810.svd",
+            "preRestartCommands": [
+                "monitor halt",
+            ],
+            "postRestartCommands": [
+                "load",
+                "monitor reset"
+            ] 
+        }
+    ]
+}

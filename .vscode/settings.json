@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.overlay": "dts",
+        "gpio.h": "c"
+    },
+    "cortex-debug.armToolchainPath": "/opt/gcc-arm-none-eabi/bin/"
+}

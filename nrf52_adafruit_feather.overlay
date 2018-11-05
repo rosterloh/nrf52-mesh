@@ -1,0 +1,16 @@
+&i2c0 {
+	status ="ok";
+	clock-frequency = <I2C_BITRATE_FAST>;
+
+	ccs811@5a {
+		compatible = "ams,ccs811";
+		reg = <0x5a>;
+		label = "CCS811";
+	};
+/*
+	bme280@76 {
+		compatible = "bosch,bme280";
+		reg = <0x76>;
+		label = "BME280";
+	};*/
+};
